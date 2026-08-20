@@ -45,7 +45,7 @@ function award(s:State,id:string){if(!s.collectibles.includes(id))s.collectibles
 function Stars(){return <div className="stars" aria-hidden>{Array.from({length:22},(_,i)=><i key={i} style={{left:`${(i*37)%100}%`,top:`${(i*61)%100}%`,animationDelay:`${(i%7)*.7}s`}}/> )}</div>}
 function Avatar({mood='idle'}:{mood?:string}){return <div className={`avatar ${mood}`} aria-label="cartoon character"><div className="hair"/><div className="face"><span className="eye l"/><span className="eye r"/><span className="mouth"/></div><div className="body"/><div className="shoe a"/><div className="shoe b"/></div>}
 function unlockCount(s:State){return s.completed.length}
-function isUnlocked(a:Activity,s:State){return a.unlock<=unlockCount(s)}
+function isUnlocked(_a:Activity,_s:State){return true}
 
 function ActivityView({a,s,setS,onBack}:{a:Activity;s:State;setS:React.Dispatch<React.SetStateAction<State>>;onBack:()=>void}){
  const [local,setLocal]=useState(0); const [msg,setMsg]=useState(''); const [choice,setChoice]=useState('');
